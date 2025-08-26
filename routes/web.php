@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
 
     //Product Routes
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+    Route::post('/products/{id}/checkout', [ProductController::class, 'checkout'])->name('products.checkout');
 
 });
 
