@@ -6,6 +6,13 @@
     <p class="text-muted mb-4">{{ $product->description }}</p>
     <h5 class="mb-4">Price: ₹{{ $product->price }}</h5>
 
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            {{ $errors->first('error') }}
+        </div>
+    @endif
+
     <form id="payment-form" method="POST" action="{{ route('products.checkout', $product->id) }}" class="p-6 border rounded shadow-sm bg-white">
         @csrf
         <input type="hidden" name="payment_method" id="payment_method">
