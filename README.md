@@ -25,3 +25,13 @@ php artisan key:generate
 # Update .env
 STRIPE_KEY=stripe_publishable_key
 STRIPE_SECRET=stripe_secret_key
+
+# Run Migrations & Seed
+php artisan migrate --seed
+
+# Run the Application
+php artisan serve
+
+# Test Cards
+Success → 4242 4242 4242 4242 (any future expiry, any 3-digit CVC)
+Payment Failure → 4000 0000 0000 9995
